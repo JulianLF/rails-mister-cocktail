@@ -10,6 +10,16 @@
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
   <body>
+    <header class="d-flex justify-content-between m-1">
+      <%= link_to  "Cocktails list", cocktails_path, class:'btn' %>
+      <div class="d-flex">
+        <form action="">
+          <input type="text" name="query" id="query" value="<%= params[:query] %>" placeholder="Search">
+          <input type="submit" class="btn btn-success" value="Search">
+        </form>
+        <%= link_to  "Add cocktail", new_cocktail_path, class:'btn btn-primary' %>
+      </div>
+    </header>
     <%= yield %>
   </body>
 </html>
