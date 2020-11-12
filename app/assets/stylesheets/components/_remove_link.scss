@@ -1,0 +1,40 @@
+.card-remove-link {
+  color: white;
+  border-radius: 50%;
+  border: 1px solid white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 30px;
+  width: 30px;
+  position: absolute;
+  right: 10px;
+  top: 60px;
+  opacity: 0.8;
+  transform: rotate(45deg);
+  font-weight: lighter;
+  &:hover {
+    color: white;
+    text-decoration: none;
+    opacity: 1;
+  }
+}
+
+.remove-link {
+  color: black;
+  border-radius: 50%;
+  border: 1px solid black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 30px;
+  width: 30px;
+  opacity: 0.8;
+  transform: rotate(45deg);
+  font-weight: lighter;
+  &:hover {
+    color: black;
+    text-decoration: none;
+    opacity: 1;
+  }
+}
