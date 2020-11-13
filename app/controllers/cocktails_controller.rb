@@ -4,7 +4,7 @@ class CocktailsController < ApplicationController
   def index
     if params[:query] && params[:query].strip != ''
       @cocktails = Cocktail.where("name LIKE '%#{params[:query]}%'")
-      @title = "matching with : #{params[:query]}"
+      @title = "matching with #{params[:query]}:"
     else
       @cocktails = Cocktail.all
       @title = ''
