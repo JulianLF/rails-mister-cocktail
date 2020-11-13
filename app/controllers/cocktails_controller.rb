@@ -51,5 +51,3 @@ class CocktailsController < ApplicationController
     @cocktail = Cocktail.find(params[:id])
   end
 end
-
-before_action :find_cocktail, only: %i[edit update show destroy]
