@@ -1,5 +1,5 @@
 class CocktailsController < ApplicationController
-  before_action :find_cocktail, only: %i[show destroy]
+  before_action :find_cocktail, only: %i[edit update show destroy]
 
   def index
     if params[:query] && params[:query].strip != ''
@@ -29,6 +29,13 @@ class CocktailsController < ApplicationController
     end
   end
 
+  def edit; end
+
+  def update
+    @cocktail.update(cocktail_params)
+    redirect_to cocktail_path(@cocktail)
+  end
+
   def destroy
     @cocktail.destroy
     redirect_to cocktails_path
@@ -44,3 +51,5 @@ class CocktailsController < ApplicationController
     @cocktail = Cocktail.find(params[:id])
   end
 end
+
+before_action :find_cocktail, only: %i[edit update show destroy]

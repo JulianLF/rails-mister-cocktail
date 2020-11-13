@@ -1,0 +1,6 @@
+<%= simple_form_for cocktail do |f| %>
+  <%= f.input :name, label: "Name" %>
+  <%= f.input :description, label: "description" %>
+  <%= f.input :photo, as: :file, label: "Image url" %>
+  <%= f.submit %>
+<% end %>
