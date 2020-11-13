@@ -2,7 +2,7 @@
 <div class="cards">
   <% @cocktails.each do |cocktail| %>
     <div class="card-product">
-      <img src="<%= cocktail.image %>" />
+      <%= cl_image_tag cocktail.photo.key, height: 300, width: 400, crop: :fill %>
       <div class="card-product-infos">
         <h2><%= cocktail.name %></h2>
         <p><%= cocktail.description %></p>
