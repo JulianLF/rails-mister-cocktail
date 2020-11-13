@@ -2,8 +2,8 @@ class CocktailsController < ApplicationController
   before_action :find_cocktail, only: %i[edit update show destroy]
 
   def index
-    if params[:query] && params[:query].strip != ''
-      @cocktails = Cocktail.where("name LIKE '%#{params[:query]}%'")
+    if params[:query] && params[:query].strip! != ''
+      @cocktails = Cocktail.where("lower(name) LIKE '%#{params[:query].downcase}%'")
       @title = "matching with #{params[:query]}:"
     else
       @cocktails = Cocktail.all
